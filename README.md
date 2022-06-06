@@ -439,4 +439,4 @@ You can explore our tableau public to access the interactive data visualization.
 ## Explore our Notebook
 
 You can explore our notebook, copy and edit it based on your own analysis.
-- [Notebook](https://public.tableau.com/app/profile/taco.badger)
+- [Notebook](https://www.kaggle.com/code/cryptocosy/us-baby-names-analysis)
