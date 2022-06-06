@@ -240,5 +240,22 @@ GROUP BY State, Name
 ```
 You can view the data on the tab called Browse Data and a drop down column choose the temp.all_years.
 
+![](https://user-images.githubusercontent.com/11693256/172169884-82c12bef-938d-4f1f-a38a-6f85fddbf2b2.png)
 
-![Photo](![image](https://user-images.githubusercontent.com/11693256/172169884-82c12bef-938d-4f1f-a38a-6f85fddbf2b2.png)
+We have a new table for filtering and sorting. This is where we used a new function ROWNUM() and partition and you will also noticed that the command has 2 selects. This is called a sub query.
+
+A subqery is a query that is nested inside a larger query just like in RStudio where it is also called nested.
+
+IMPORTANT NOTES ABOUT SUBQUERY:
+- Subqueries are usually nested in the SELECT, FROM, and/or WHERE clauses. Subqueries can’t be nested in SET queries.
+- Comparison operators such as >, <, or = help you compare data in subqueries. You can also use multiple row operators including IN, ANY, or ALL.
+- The statement containing a subquery is an outer query or outer select. Subqueries are nested within these statements, called inner queries or inner select.
+- The innermost query executes first. Its parent query executes last so it can use the results returned by inner queries.
+- Parentheses are used to mark the beginning and end of a subquery.
+- For a subquery to compare multiple columns, those columns must be selected in the main query.
+- A SET command can’t have a nested subquery because it is used with UPDATE to adjust specific columns and values in a table.
+- Subqueries that return more than one row rely on multiple value operators such as the IN command.
+
+What does the rownumber and partition by do?
+- The ROW_NUMBER() is a window function that assigns a sequential integer to each row of a query's result set. Rows are ordered starting from one based on the order specified by the ORDER BY clause in the window definition.
+- Partition By, this divides the rows or query result set into small partitions.
