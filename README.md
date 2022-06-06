@@ -432,4 +432,19 @@ Tableau Visualizations are used to summarize the key findings, we aim for you to
 ![](https://github.com/TacoBadger/US-Baby-Names-Dataset/blob/main/Assets/Top%20Names%20per%20State%20in%20the%20last%203%20Years.png?raw=true)
 
 ## Explore our Tableau Public
+
 You can explore our tableau public to access the interactive data visualization.
+- [@TacoBadger](https://public.tableau.com/app/profile/taco.badger)
+
+## Explore our Notebook
+
+You can explore our notebook, copy and edit it based on your own analysis.
+- [Notebook](## Explore our Tableau Public
+
+You can explore our tableau public to access the interactive data visualization.
+- [@TacoBadger](https://public.tableau.com/app/profile/taco.badger)
+
+## Explore our Notebook
+
+You can explore our notebook, copy and edit it based on your own analysis.
+- [Notebook](https://public.tableau.com/app/profile/taco.badger)
