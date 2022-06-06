@@ -60,3 +60,140 @@ Most of the script would be into SQL Language. Other than that, there are some o
 **Tableau Public** is a free platform to explore, create and publicly share data visualizations online. With the largest repository of data visualizations in the world to learn from, Tableau Public makes developing data skills easy.
 
 Let's get started!
+
+## Importing the dataset from Kaggle to see what tables we have in the dataset
+
+I downloaded the [dataset](https://www.kaggle.com/datasets/kaggle/us-baby-names) usually it appears to be a zip file but you can just extract it in a new folder, I made a folder called "US Baby Name Analysis" and save all my csv files there. 
+
+You can also try to just open the database in SQLite file included in the dataset, it would be the same dataset but I wanted to try importing the dataset so I don't need to figure it out sooner or later. It includes two csv file.
+-  NationalNames.csv
+-  StateNames.csv
+
+I uploaded the file in DB Browser and named it accordingly national_names_baby and state_names_baby. I also created a table with the right fields. You can follow this [tutorial](https://www.youtube.com/watch?v=TOqI-KiTBKU) if you are stuck.
+
+I also named the file national_names_baby and state_names_baby which are the terms I will use in this script.
+- ID - Integer
+- Name - Text
+- Year - Integer
+- Gender - Text
+- Count - Integer
+- State - Text
+
+Double check to make sure you have the same fields too.
+
+You can also view the data so you know what data it has.
+
+```bash
+SELECT * FROM national_names_baby
+
+SELECT * FROM state_names_baby
+```
+
+*SELECT * commands to return everything in the dataset.*
+
+## Cleaning the dataset and sorting it accordingly
+
+Checking the rows for nulls and other variables. You can always change the limit to any number so you can get a better overview or look at a few rows. You can also filter it on the browse data tab.
+
+In this example we look and filter through the columns that we want to work with.
+
+You define what you want to see after the SELECT, * means all possible columns. You choose the table after the FROM, you add the conditions for the data you want to use for example we used LIMIT which only returns a few rows based on how many you want.
+
+```bash
+SELECT * FROM national_names_baby LIMIT 10
+
+SELECT * FROM state_names_baby LIMIT 10
+```
+## List of Names, Year, Gender, State and Count
+
+national_baby_names
+| ID        	                | Name            	| Year            	| Gender           	| Count           	|
+|-------------------	        |------------------	|-------------------|------------------	|------------------	|
+| 1                          	| Mary              | 1880             	| F                 | 7065              |
+| 2                  	        | Anna	            | 1880             	| F                 | 2604              |
+| 3                           | Emma              | 1880            	| F                 | 2003              |
+| 4                           | Elizabeth         | 1880            	| F                 | 1939              |
+| 5                           | Minnie            | 1880            	| F                 | 1746              |
+| 6                           | Margaret          | 1880            	| F                 | 1578              |
+| 7                           | Ida               | 1880            	| F                 | 1472              |
+| 8                           | Alice             | 1880            	| F                 | 1414              |
+| 9                           | Bertha            | 1880            	| F                 | 1320              |
+| 10                          | Sarah             | 1880            	| F                 | 1288              |
+
+state_names_baby
+| ID        	                | Name            	| Year            	| Gender           	| State           	| Count           	|
+|-------------------	        |------------------	|-------------------|------------------	|------------------	|------------------	|
+| 1                          	| Mary              | 1880             	| F                 | AK                | 14 |
+| 2                  	        | Annie	            | 1880             	| F                 | AK                | 12 |
+| 3                           | Anna              | 1880            	| F                 | AK                | 10 |
+| 4                           | Margareth         | 1880            	| F                 | AK                | 8  |
+| 5                           | Helen             | 1880            	| F                 | AK                | 7  |
+| 6                           | Elsie             | 1880            	| F                 | AK                | 6  |
+| 7                           | Lucy              | 1880            	| F                 | AK                | 6  |
+| 8                           | Dorothy           | 1880            	| F                 | AK                | 5  |
+| 9                           | Mary              | 1880            	| F                 | AK                | 12 |
+| 10                          | Margaret          | 1880            	| F                 | AK                | 7  |
+
+And you can also skim through the data when you remove the limit.  It doesn't have much null values and duplicates so it is already okay for cleaning and further filtering and sorting to find out the answers to the questions we need.
+
+You can also have a summary of how many the rows for each dataset.Have a summary of the rows and the column names.
+
+```bash
+SELECT count(1) as rows, count(Id), count(Name), count(Year), count(Gender), count(Count)
+FROM national_names_baby
+
+SELECT count(1) as rows, count(Id), count(Name), count(Year), count(Gender), count(State), count(Count)
+FROM state_names_baby
+```
+| Rows        	   | Count(ID)          | Count(Name)       | Count(Year)     	| Count(Year)      | Count(Gender)   | Count(State)    | Count(Count)     |
+|------------------|------------------	|-------------------|------------------	|------------------|-----------------|-----------------|------------------|
+| 1825433          | 1825433            | 1825433           | 1825433           | 1825433          | 1825433         | 1825433         | 1825433          |
+
+| Rows        	   | Count(ID)          | Count(Name)       | Count(Year)     	| Count(Year)      | Count(Gender)   | Count(State)    | Count(Count)     |
+|------------------|------------------	|-------------------|------------------	|------------------|-----------------|-----------------|------------------|
+| 5647426          | 5647426            | 5647426           | 5647426           |5647426           | 5647426         | 5647426         | 5647426          |
+
+## Checking the data and getting an overview of the findings I need
+
+This is the most basic query. The only must parts of a qeury is the SELECT and the FROM. In this method, we will also use the function COUNT and DISTINCT:
+- COUNT(ALL expression) evaluates expression for each row in a group, and returns the number of nonnull values.
+- COUNT(DISTINCT expression) evaluates expression for each row in a group, and returns the number of unique, nonnull values.
+
+How many genders and states in the dataset state_names_baby? We will only check this dataset because this has the most valuable data that we need. It has the ID, Name, Year, State, Gender and Count.
+
+I also checked what are the states in the dataset state_names_baby.
+
+```bash
+# to check and count how many genders and state
+SELECT count(distinct Gender), count(distinct State) FROM state_names_baby
+```
+
+| Count(distinct Gender)      | Count(distinct State) |
+|-------------------	        |------------------	|
+| 2                          	| 51                |
+
+```bash
+# to check the names of the state
+SELECT distinct State FROM state_names_baby
+```
+And the code shows 51 states.
+
+How many male names and how many female names? I'll be mainly using the state_names_baby dataset because it has more relevant data than the national_baby_names dataset.
+
+```bash
+SELECT Gender, sum(Count) FROM state_names_baby group by Gender
+```
+
+| Gender                      | Sum(Count) |
+|-------------------	        |------------------	|
+| F                         	| 143770075                |
+| M                         	| 155113251                |
+
+Wanted to how many rows for each state, name, gender and added a new column called births which is the sum of the count by each name. Here we used the command GROUP BY. The GROUP BY clause a selected group of rows into summary rows by values of one or more columns. The GROUP BY clause returns one row for each group.
+
+```bash
+SELECT state, name, gender, sum(count) as births FROM state_names_baby GROUP BY state, name, gender
+```
+And it returned a total of  304918 rows.
+
+From here we got a good overview of what we need.
