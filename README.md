@@ -140,7 +140,7 @@ You can filter through the browse tab too.
 
 And you can also skim through the data when you remove the limit.  It doesn't have much null values and duplicates so it is already okay for cleaning and further filtering and sorting to find out the answers to the questions we need.
 
-You can also have a summary of how many the rows for each dataset.Have a summary of the rows and the column names.
+You can also have a summary of how many the rows for each dataset. Have a summary of the rows and the column names.
 
 ```bash
 SELECT count(1) as rows, count(Id), count(Name), count(Year), count(Gender), count(Count)
