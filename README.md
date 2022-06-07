@@ -221,7 +221,7 @@ We will be also using CREATE TEMPORARY TABLE to save csv files to create for vis
 
 ## The Use of all SQL Queries and Functions
 
-Let's start with: What are the 3 most popular names overall and which year? From here I wanted to create a temporary table for my visualizations too. So first we need to filter out the data that we need before making the temporary table.
+Let's start with: What are the most popular names overall and which year? From here I wanted to create a temporary table for my visualizations too. So first we need to filter out the data that we need before making the temporary table.
 
 ```bash
 #filter it first
