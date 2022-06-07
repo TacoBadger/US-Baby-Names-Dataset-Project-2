@@ -428,7 +428,7 @@ Tableau Visualizations are used to summarize the key findings, we aim for you to
 ![](https://github.com/TacoBadger/US-Baby-Names-Dataset/blob/main/Assets/10%20Most%20Popular%20Names%20for%20Males%20Overall.png?raw=true)
 
 - What is the top three names per state in the dataset?
-- 
+
 ![](https://github.com/TacoBadger/US-Baby-Names-Dataset/blob/main/Assets/Top%20Names%20per%20State%20in%20the%20last%203%20Years.png?raw=true)
 
 ## Explore our Tableau Public
