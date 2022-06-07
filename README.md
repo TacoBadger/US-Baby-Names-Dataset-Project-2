@@ -281,7 +281,7 @@ FROM all_years
 ) where rownum < 4
 ```
 
-What are the top 10 ten names for males and females? I will also create a temporary table for visualizations. We will do the same methods from all_years_names.
+What are the top 10 names for males and females? I will also create a temporary table for visualizations. We will do the same methods from all_years_names.
 
 ```bash
 #filter the data based on the data that we need
@@ -320,7 +320,7 @@ ORDER BY total desc
 LIMIT 5
 ```
 
-And lastly I want to know the top 3 names per state (including the gender and year in the new table and visualization) in the last 3 years because adding the present might be culturally different. So we will create a new temporary table to sort and filter and also for visualizations.
+And lastly I want to know the top names per state (including the gender and year in the new table and visualization) in the last 3 years because adding the present might be culturally different. So we will create a new temporary table to sort and filter and also for visualizations.
 
 Please take note that the data is updated until 2014 so I decided to choose 3 years before which is 2013, 2012 and 2011 because the names might be more modern. I hope that is clear.
 
