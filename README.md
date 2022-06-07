@@ -39,7 +39,7 @@ We will also be practicing our [Tableau](https://public.tableau.com/en-us/s/) sk
 
 So here the few questions or problems I want to solve or figure out in this dataset.
 - What are the most popular names overall by year in the dataset?
-- What is the top five names for females and males?
+- What is the top ten names for females and males?
 - What is the top names per state in the last 3 years in the dataset?
 
 ## Important Definitions
@@ -281,7 +281,7 @@ FROM all_years
 ) where rownum < 4
 ```
 
-What are the most popular names overall by Gender? I will also create a temporary table for visualizations. We will do the same methods from all_years_names.
+What are the top 10 ten names for males and females? I will also create a temporary table for visualizations. We will do the same methods from all_years_names.
 
 ```bash
 #filter the data based on the data that we need
