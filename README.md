@@ -341,7 +341,7 @@ WHERE Year > 2011
 GROUP BY State, Name, Gender, Year
 ```
 
-We need to filter it more to get the right data to answer our question "What is the top three names per state in the dataset?"
+We need to filter it more to get the right data to answer our question "What is the top three names per state in the last 3 years?"
 
 ```bash
 SELECT State, Name, Total, Gender, Year
