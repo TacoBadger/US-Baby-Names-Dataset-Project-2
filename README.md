@@ -290,14 +290,14 @@ FROM state_names_baby
 WHERE Gender = "F"
 GROUP  BY Name
 ORDER BY total desc
-LIMIT 5
+LIMIT 10
 
 SELECT Name, sum(Count) as total
 FROM state_names_baby
 WHERE Gender = "M"
 GROUP  BY Name
 ORDER BY total desc
-LIMIT 5
+LIMIT 10
 ```
 
 Since this is the data we need to answer our question, we will create another temporary table for visualizations.
