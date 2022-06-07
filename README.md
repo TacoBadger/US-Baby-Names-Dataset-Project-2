@@ -309,7 +309,7 @@ FROM state_names_baby
 WHERE Gender = "F"
 GROUP BY Name
 ORDER BY total desc
-LIMIT 5
+LIMIT 10
 
 CREATE TEMPORARY TABLE popular_names_males as
 SELECT Name, sum(Count) as total
@@ -317,7 +317,7 @@ FROM state_names_baby
 WHERE Gender = "M"
 GROUP  BY Name
 ORDER BY total desc
-LIMIT 5
+LIMIT 10
 ```
 
 And lastly I want to know the top names per state (including the gender and year in the new table and visualization) in the last 3 years because adding the present might be culturally different. So we will create a new temporary table to sort and filter and also for visualizations.
