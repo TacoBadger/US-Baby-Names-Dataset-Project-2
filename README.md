@@ -35,7 +35,7 @@ But for this practice, I will be using the platform [DB Browser for SQLite](http
 
 We will also be practicing our [Tableau](https://public.tableau.com/en-us/s/) skills with this dataset.
 
-# Questions I want to answer
+## Questions I want to answer
 
 So here the few questions or problems I want to solve or figure out in this dataset.
 - What are the most popular names overall by year in the dataset?
