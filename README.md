@@ -26,7 +26,7 @@ Also we cannot upload the dataset manually because of the file size so we will l
 - [Key Findings](#key-findings)
 - [Explore our Tableau Public](#explore-our-tableau-public)
 - [Explore our Notebook](#explore-our-notebook)
-- [What is Next?](#what-is-next-?)
+- [What is Next?](#what-is-next-)
 
 ## Motivation
 
