@@ -1,4 +1,4 @@
-# US Baby Names Dataset
+# US Baby Names Dataset (Project 2)
 ![](https://github.com/TacoBadger/US-Baby-Names-Dataset/blob/main/Assets/banner.png?raw=true)
 
 ## Analysis of the US Baby Names in Kaggle.
