@@ -2,18 +2,14 @@
 ![](https://github.com/TacoBadger/US-Baby-Names-Dataset/blob/main/Assets/banner.png?raw=true)
 
 ## Introduction
-In this project, I will work with the most popular baby names in the US. The dataset is a public dataset made available through Kaggle, click the link here to see it.
+In this project, I will work with the most popular baby names in the US. The dataset is a public dataset made available through Kaggle, click the link below to see to see the database.
 
 -  [US Baby Names](https://www.kaggle.com/datasets/kaggle/us-baby-names)
 
-In this project, I will start playing around with SQL. In the end I will also generate a few visualization in Tableau, so it is easier to show the results.
+In this project, I will start playing around with SQL to get access to data, clean the data and analyze the data. The logic behind SQL is very similar to any other tools used for data analysis. I will use [DB Browser for SQLite](https://sqlitebrowser.org/). This is a visual, open source technology used to create, design, and edit database files compatible with SQLite. This platform allows users and developers to create databases, search, and edit data via a spreadsheet-like interface.
 
 
-I'll be using this script or dataset to practice my knowledge on Data Analysis using SQL Language, which should be a must tool for every data scientist - both for getting access to data, cleaning the data and analyzing the data. The logic behind SQL is very similar to any other tool or language that used for data analysis (excel) and for those that used to work with data, should be very intuitive.
-
-But for this practice, I will be using the platform [DB Browser for SQLite](https://sqlitebrowser.org/). This is a visual, open source technology used to create, design, and edit database files compatible with SQLite. This technology allows users and developers to create databases, search, and edit data via a spreadsheet-like interface and it also accpets SQL commands, functions but not all of it, we will practice all the codes and functions that works in this platform with this documentation.
-
-We will also be practicing our [Tableau](https://public.tableau.com/en-us/s/) skills with this dataset.
+In the end I will also generate a few visualization in Tableau, so it is easier to show the results. See here to learn more about [Tableau](https://public.tableau.com/en-us/s/) skills with this dataset.
 
 
 
@@ -21,9 +17,8 @@ We will also be practicing our [Tableau](https://public.tableau.com/en-us/s/) sk
 - [@TacoBadger](https://github.com/TacoBadger)
 
 ## Methods
-- [Motivation](#motivation)
 - [Questions](#questions)
-- [Important Definitions](#important-definitions)
+- [Definitions](#important-definitions)
 - [Importing the dataset from Kaggle to see what tables we have in the dataset](#importing-the-dataset-from-kaggle-to-see-what-tables-we-have-in-the-dataset)
 - [Cleaning the dataset and sorting it accordingly](#cleaning-the-dataset-and-sorting-it-accordingly)
 - [List of Names, Year, Gender, State and Count](#list-of-names-year-gender-state-and-count)
@@ -44,7 +39,7 @@ So here the few questions or problems I want to solve or figure out in this data
 - What is the top ten names for females and males?
 - What is the top names per state in the last 3 years in the dataset?
 
-## Important Definitions
+## Definitions
 
 **Structured Query Language** (SQL) is a standardized programming language that is used to manage relational databases and perform various operations on the data in them. In our case we are using SQL Lite which is just similar to SQL the only difference is:
 
