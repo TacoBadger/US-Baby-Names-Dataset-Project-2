@@ -34,7 +34,7 @@ In the end I will also generate a few visualization in Tableau, so it is easier 
 
 ## Questions
 
-So here the few questions or problems I want to solve or figure out in this dataset.
+So here the few questions I want to figure out with this dataset:
 - What are the most popular names overall by year in the dataset?
 - What is the top ten names for females and males?
 - What is the top names per state in the last 3 years in the dataset?
@@ -62,9 +62,9 @@ Let's get started!
 
 ## Importing the dataset from Kaggle to see what tables we have in the dataset
 
-I downloaded the [dataset](https://www.kaggle.com/datasets/kaggle/us-baby-names) usually it appears to be a zip file but you can just extract it in a new folder, I made a folder called "US Baby Name Analysis" and save all my csv files there. 
+I downloaded the [dataset](https://www.kaggle.com/datasets/kaggle/us-baby-names) it is a zip file. I made a new folder called "US Baby Name Analysis". Going forward, I will save all my csv files there. 
 
-You can also try to just open the database in SQLite file included in the dataset, it would be the same dataset but I wanted to try importing the dataset so I don't need to figure it out sooner or later. It includes two csv file.
+The zip file cointains two csv file.
 -  NationalNames.csv
 -  StateNames.csv
 
