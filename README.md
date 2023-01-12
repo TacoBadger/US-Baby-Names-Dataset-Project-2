@@ -21,7 +21,7 @@ In the end I will also generate a few visualization in Tableau, so it is easier 
 - [Definitions](#important-definitions)
 - [Import the dataset](#import-the-dataset)
 - [Show the dataset](#show-the-dataset)
-- [Checking the data and getting an overview of the findings I need](#checking-the-data-and-getting-an-overview-of-the-findings-i-need)
+- [Counting](#counting)
 - [The Use of all SQL Queries and Functions](#the-use-of-all-sql-queries-and-functions)
 - [Let's do some basic analytics](#lets-do-some-basic-analytics)
 - [Query Run Order](#query-run-order)
@@ -145,15 +145,13 @@ You can filter through the browse tab too.
 ![](https://github.com/TacoBadger/US-Baby-Names-Dataset/blob/main/Assets/Filtering%20NA.png?raw=true)
      |
 
-## Checking the data and getting an overview of the findings I need
+## Counting
 
-This is the most basic query. The only must parts of a qeury is the SELECT and the FROM. In this method, we will also use the function COUNT and DISTINCT:
+Let's define the function COUNT and DISTINCT before using them:
 - COUNT(ALL expression) evaluates expression for each row in a group, and returns the number of nonnull values.
 - COUNT(DISTINCT expression) evaluates expression for each row in a group, and returns the number of unique, nonnull values.
 
-How many genders and states in the dataset state_names_baby? We will only check this dataset because this has the most valuable data that we need. It has the ID, Name, Year, State, Gender and Count.
-
-I also checked what are the states in the dataset state_names_baby.
+Now we will use the dataset state_names_baby to count how many genders there are and how many different states there are. We will use the following query:
 
 ```bash
 # to check and count how many genders and state
