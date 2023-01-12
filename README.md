@@ -19,8 +19,8 @@ In the end I will also generate a few visualization in Tableau, so it is easier 
 ## Methods
 - [Questions](#questions)
 - [Definitions](#important-definitions)
-- [Importing the dataset from Kaggle to see what tables we have in the dataset](#importing-the-dataset-from-kaggle-to-see-what-tables-we-have-in-the-dataset)
-- [Cleaning the dataset and sorting it accordingly](#cleaning-the-dataset-and-sorting-it-accordingly)
+- [Import the dataset](#import-the-dataset)
+- [Clean the dataset](#clean-the-dataset)
 - [List of Names, Year, Gender, State and Count](#list-of-names-year-gender-state-and-count)
 - [Checking the data and getting an overview of the findings I need](#checking-the-data-and-getting-an-overview-of-the-findings-i-need)
 - [The Use of all SQL Queries and Functions](#the-use-of-all-sql-queries-and-functions)
@@ -60,7 +60,7 @@ Most of the script would be into SQL Language. Other than that, there are some o
 
 Let's get started!
 
-## Importing the dataset from Kaggle to see what tables we have in the dataset
+## Import the dataset
 
 I downloaded the [dataset](https://www.kaggle.com/datasets/kaggle/us-baby-names) it is a zip file. I made a new folder called "US Baby Name Analysis". Going forward, I will save all my csv files there. 
 
@@ -68,7 +68,7 @@ The zip file cointains two csv files:
 -  NationalNames.csv
 -  StateNames.csv
 
-I uploaded the files in DB Browser and named it accordingly; national_names_baby and state_names_baby. I also created a table with the right fields. You can follow this [tutorial](https://www.youtube.com/watch?v=TOqI-KiTBKU) if you are stuck.
+I uploaded the files in DB Browser and named it accordingly; national_names_baby and state_names_baby. I also created a table with the right fields. You can follow this here [tutorial](https://www.youtube.com/watch?v=TOqI-KiTBKU) if you are stuck.
 
 I also named the file national_names_baby and state_names_baby which are the terms I will use in this script.
 - ID - Integer
@@ -90,13 +90,15 @@ SELECT * FROM state_names_baby
 
 The *SELECT * command will return all the tables in the dataset.*
 
-## Cleaning the dataset and sorting it accordingly
+## Clean the dataset
 
-Checking the rows for nulls and other variables. You can always change the limit to any number so you can get a better overview or look at a few rows. You can also filter it on the browse data tab.
+Now we will look and filter through the columns that we want to work with.
 
-In this example we look and filter through the columns that we want to work with.
+You can also check the rows for nulls. 
 
-You define what you want to see after the SELECT, * means all possible columns. You choose the table after the FROM, you add the conditions for the data you want to use for example we used LIMIT which only returns a few rows based on how many you want.
+You can always change the limit to any number so you can get a better overview.
+
+You define what you want to see after the SELECT, * means all columns. You choose the table after the FROM, you add the conditions for the data you want to use for example we used LIMIT which only returns a few rows based on how many you want.
 
 ```bash
 SELECT * FROM national_names_baby LIMIT 10
