@@ -64,11 +64,11 @@ Let's get started!
 
 I downloaded the [dataset](https://www.kaggle.com/datasets/kaggle/us-baby-names) it is a zip file. I made a new folder called "US Baby Name Analysis". Going forward, I will save all my csv files there. 
 
-The zip file cointains two csv file.
+The zip file cointains two csv files:
 -  NationalNames.csv
 -  StateNames.csv
 
-I uploaded the file in DB Browser and named it accordingly national_names_baby and state_names_baby. I also created a table with the right fields. You can follow this [tutorial](https://www.youtube.com/watch?v=TOqI-KiTBKU) if you are stuck.
+I uploaded the files in DB Browser and named it accordingly; national_names_baby and state_names_baby. I also created a table with the right fields. You can follow this [tutorial](https://www.youtube.com/watch?v=TOqI-KiTBKU) if you are stuck.
 
 I also named the file national_names_baby and state_names_baby which are the terms I will use in this script.
 - ID - Integer
@@ -88,7 +88,7 @@ SELECT * FROM national_names_baby
 SELECT * FROM state_names_baby
 ```
 
-*SELECT * commands to return everything in the dataset.*
+The *SELECT * command will return all the tables in the dataset.*
 
 ## Cleaning the dataset and sorting it accordingly
 
