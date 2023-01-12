@@ -143,25 +143,7 @@ state_names_baby
 You can filter through the browse tab too.
 
 ![](https://github.com/TacoBadger/US-Baby-Names-Dataset/blob/main/Assets/Filtering%20NA.png?raw=true)
-
-And you can also skim through the data when you remove the limit.  It doesn't have much null values and duplicates so it is already okay for cleaning and further filtering and sorting to find out the answers to the questions we need.
-
-You can also have a summary of how many the rows for each dataset. Have a summary of the rows and the column names.
-
-```bash
-SELECT count(1) as rows, count(Id), count(Name), count(Year), count(Gender), count(Count)
-FROM national_names_baby
-
-SELECT count(1) as rows, count(Id), count(Name), count(Year), count(Gender), count(State), count(Count)
-FROM state_names_baby
-```
-| Rows        	   | Count(ID)          | Count(Name)       | Count(Year)     	| Count(Year)      | Count(Gender)   | Count(State)    | Count(Count)     |
-|------------------|------------------	|-------------------|------------------	|------------------|-----------------|-----------------|------------------|
-| 1825433          | 1825433            | 1825433           | 1825433           | 1825433          | 1825433         | 1825433         | 1825433          |
-
-| Rows        	   | Count(ID)          | Count(Name)       | Count(Year)     	| Count(Year)      | Count(Gender)   | Count(State)    | Count(Count)     |
-|------------------|------------------	|-------------------|------------------	|------------------|-----------------|-----------------|------------------|
-| 5647426          | 5647426            | 5647426           | 5647426           |5647426           | 5647426         | 5647426         | 5647426          |
+     |
 
 ## Checking the data and getting an overview of the findings I need
 
