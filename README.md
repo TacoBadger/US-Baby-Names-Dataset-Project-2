@@ -1,19 +1,28 @@
 # US Baby Names Dataset (Project 2)
 ![](https://github.com/TacoBadger/US-Baby-Names-Dataset/blob/main/Assets/banner.png?raw=true)
 
-## Analysis of the US Baby Names in Kaggle.
-Worked with the dataset to find the Most Popular Names in the US. The dataset is a public dataset made available through Kaggle. Please do take note that this document is for practice purposes only and it does not include any marketing of the titles involved. 
-
-Also we cannot upload the dataset manually because of the file size so we will link it below. 
+## Introduction
+In this project, I will work with the most popular baby names in the US. The dataset is a public dataset made available through Kaggle, click the link here to see it.
 
 -  [US Baby Names](https://www.kaggle.com/datasets/kaggle/us-baby-names)
+
+In this project, I will start playing around with SQL. In the end I will also generate a few visualization in Tableau, so it is easier to show the results.
+
+
+I'll be using this script or dataset to practice my knowledge on Data Analysis using SQL Language, which should be a must tool for every data scientist - both for getting access to data, cleaning the data and analyzing the data. The logic behind SQL is very similar to any other tool or language that used for data analysis (excel) and for those that used to work with data, should be very intuitive.
+
+But for this practice, I will be using the platform [DB Browser for SQLite](https://sqlitebrowser.org/). This is a visual, open source technology used to create, design, and edit database files compatible with SQLite. This technology allows users and developers to create databases, search, and edit data via a spreadsheet-like interface and it also accpets SQL commands, functions but not all of it, we will practice all the codes and functions that works in this platform with this documentation.
+
+We will also be practicing our [Tableau](https://public.tableau.com/en-us/s/) skills with this dataset.
+
+
 
 ## Author
 - [@TacoBadger](https://github.com/TacoBadger)
 
 ## Methods
 - [Motivation](#motivation)
-- [Questions I want to answer](#questions-i-want-to-answer)
+- [Questions](#questions-i-want-to-answer)
 - [Important Definitions](#important-definitions)
 - [Importing the dataset from Kaggle to see what tables we have in the dataset](#importing-the-dataset-from-kaggle-to-see-what-tables-we-have-in-the-dataset)
 - [Cleaning the dataset and sorting it accordingly](#cleaning-the-dataset-and-sorting-it-accordingly)
@@ -28,15 +37,7 @@ Also we cannot upload the dataset manually because of the file size so we will l
 - [Explore our Notebook](#explore-our-notebook)
 - [What is Next?](#what-is-next)
 
-## Motivation
-
-I'll be using this script or dataset to practice my knowledge on Data Analysis using SQL Language, which should be a must tool for every data scientist - both for getting access to data, cleaning the data and analyzing the data. The logic behind SQL is very similar to any other tool or language that used for data analysis (excel) and for those that used to work with data, should be very intuitive.
-
-But for this practice, I will be using the platform [DB Browser for SQLite](https://sqlitebrowser.org/). This is a visual, open source technology used to create, design, and edit database files compatible with SQLite. This technology allows users and developers to create databases, search, and edit data via a spreadsheet-like interface and it also accpets SQL commands, functions but not all of it, we will practice all the codes and functions that works in this platform with this documentation.
-
-We will also be practicing our [Tableau](https://public.tableau.com/en-us/s/) skills with this dataset.
-
-## Questions I want to answer
+## Questions
 
 So here the few questions or problems I want to solve or figure out in this dataset.
 - What are the most popular names overall by year in the dataset?
