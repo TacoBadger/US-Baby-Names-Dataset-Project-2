@@ -20,8 +20,7 @@ In the end I will also generate a few visualization in Tableau, so it is easier 
 - [Questions](#questions)
 - [Definitions](#important-definitions)
 - [Import the dataset](#import-the-dataset)
-- [Clean the dataset](#clean-the-dataset)
-- [List of Names, Year, Gender, State and Count](#list-of-names-year-gender-state-and-count)
+- [Show the dataset](#show-the-dataset)
 - [Checking the data and getting an overview of the findings I need](#checking-the-data-and-getting-an-overview-of-the-findings-i-need)
 - [The Use of all SQL Queries and Functions](#the-use-of-all-sql-queries-and-functions)
 - [Let's do some basic analytics](#lets-do-some-basic-analytics)
@@ -70,7 +69,8 @@ The zip file cointains two csv files:
 
 I uploaded the files in DB Browser and named it accordingly; national_names_baby and state_names_baby. I also created a table with the right fields. You can follow this here [tutorial](https://www.youtube.com/watch?v=TOqI-KiTBKU) if you are stuck.
 
-I also named the file national_names_baby and state_names_baby which are the terms I will use in this script.
+
+I also named the file national_names_baby and state_names_baby which are the terms I will use in this script. The data types, I will work with are as follows:
 - ID - Integer
 - Name - Text
 - Year - Integer
@@ -90,22 +90,27 @@ SELECT * FROM state_names_baby
 
 The *SELECT * command will return all the tables in the dataset.*
 
-## Clean the dataset
-
 Now we will look and filter through the columns that we want to work with.
 
 You can also check the rows for nulls. 
 
-You can always change the limit to any number so you can get a better overview.
+You can always change the limit to any number, so you can get a better overview.
 
-You define what you want to see after the SELECT, * means all columns. You choose the table after the FROM, you add the conditions for the data you want to use for example we used LIMIT which only returns a few rows based on how many you want.
+
+## Show the dataset
+
+
+
+You define what you want to see after the SELECT. If you want to see all tables, simply type a  *.
+
+In the example below I have decided I wanted to see 2 tables and constrain the results to 10 rows.
 
 ```bash
 SELECT * FROM national_names_baby LIMIT 10
 
 SELECT * FROM state_names_baby LIMIT 10
 ```
-## List of Names, Year, Gender, State and Count
+The result will be as follows:
 
 national_baby_names
 | ID        	                | Name            	| Year            	| Gender           	| Count           	|
