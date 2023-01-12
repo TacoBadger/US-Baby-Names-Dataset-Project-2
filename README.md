@@ -207,23 +207,6 @@ A **subqery** is a query that is nested inside a larger query just like in RStud
 Which is a great example of sub queries and inside it are different kind of functions.
 
 ## Key Findings
-Tableau Visualizations are used to summarize the key findings, we aim for you to understand the viz within 5 seconds.
-
-- What are the most popular names overall in the dataset?
-
-![](https://github.com/TacoBadger/US-Baby-Names-Dataset/blob/main/Assets/Most%20Popular%20Names%20Overall%20by%20Year.png?raw=true)
-
-- What is the top five names for females?
-
-![](https://github.com/TacoBadger/US-Baby-Names-Dataset/blob/main/Assets/10%20Most%20Popular%20Names%20for%20Females%20Overall.png?raw=true)
-
-- What is the top five names for males?
-
-![](https://github.com/TacoBadger/US-Baby-Names-Dataset/blob/main/Assets/10%20Most%20Popular%20Names%20for%20Males%20Overall.png?raw=true)
-
-- What is the top three names per state in the dataset?
-
-![](https://github.com/TacoBadger/US-Baby-Names-Dataset/blob/main/Assets/Top%20Names%20per%20State%20in%20the%20last%203%20Years.png?raw=true)
 
 
 ## What is next?
