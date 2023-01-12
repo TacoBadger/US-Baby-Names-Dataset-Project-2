@@ -162,13 +162,7 @@ SELECT count(distinct Gender), count(distinct State) FROM state_names_baby
 |-------------------	        |------------------	|
 | 2                          	| 51                |
 
-```bash
-# to check the names of the state
-SELECT distinct State FROM state_names_baby
-```
-And the code shows 51 states.
-
-How many male names and how many female names? I'll be mainly using the state_names_baby dataset because it has more relevant data than the national_baby_names dataset.
+The next thing I want to figure out is how many different male and female names do we have? for that I just need to type in the query below to get the result.
 
 ```bash
 SELECT Gender, sum(Count) FROM state_names_baby group by Gender
@@ -179,18 +173,6 @@ SELECT Gender, sum(Count) FROM state_names_baby group by Gender
 | F                         	| 143770075                |
 | M                         	| 155113251                |
 
-Wanted to how many rows for each state, name, gender and added a new column called births which is the sum of the count by each name. 
-
-Here we used the command GROUP BY. 
-
-The GROUP BY clause a selected group of rows into summary rows by values of one or more columns. The GROUP BY clause returns one row for each group.
-
-```bash
-SELECT state, name, gender, sum(count) as births FROM state_names_baby GROUP BY state, name, gender
-```
-And it returned a total of  304918 rows.
-
-From here we got a good overview of what we need.
 
 ## Let's do some basic analytics
 
