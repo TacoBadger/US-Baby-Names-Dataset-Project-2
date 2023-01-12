@@ -9,7 +9,7 @@ In this project, I will work with the most popular baby names in the US. The dat
 In this project, I will start playing around with SQL to get access to data, clean the data and analyze the data. The logic behind SQL is very similar to any other tools used for data analysis. I will use [DB Browser for SQLite](https://sqlitebrowser.org/). This is a visual, open source technology used to create, design, and edit database files compatible with SQLite. This platform allows users and developers to create databases, search, and edit data via a spreadsheet-like interface.
 
 
-In the end I will also generate a few visualization in Tableau, so it is easier to show the results. See here to learn more about [Tableau](https://public.tableau.com/en-us/s/) skills with this dataset.
+In the end I will also generate a few visualization in Tableau, so it is easier to show the results. See here to learn more about [Tableau](https://public.tableau.com/en-us/s/).
 
 
 
@@ -41,7 +41,9 @@ So here the few questions or problems I want to solve or figure out in this data
 
 ## Definitions
 
-**Structured Query Language** (SQL) is a standardized programming language that is used to manage relational databases and perform various operations on the data in them. In our case we are using SQL Lite which is just similar to SQL the only difference is:
+Here are a few defintions before we get started.
+
+**Structured Query Language** (SQL) is a standardized programming language that is used to manage relational databases and perform various operations on the data in them. 
 
 **SQL** is a query language which is used by different SQL databases. It is not a database itself.
 
