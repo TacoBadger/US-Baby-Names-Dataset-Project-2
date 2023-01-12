@@ -23,10 +23,8 @@ In this project, I will start playing around with SQL to get access to data, cle
 
 ## Questions
 
-So here the few questions I want to figure out with this dataset:
-- What are the most popular names overall by year in the dataset?
-- What is the top ten names for females and males?
-- What is the top names per state in the last 3 years in the dataset?
+So here is 1 question I want to figure out with this dataset:
+- What are the most popular names overall in the dataset, and what are the most popular in each state sorted by year?
 
 ## Definitions
 
@@ -166,19 +164,10 @@ SELECT Gender, sum(Count) FROM state_names_baby group by Gender
 
 ## Key Findings
 
+I used the case study to learn some of the most basic sql queries such as SELECT, LIMIT, COUNT. I learned what the most popular girls names are as well, but I lacked to figure out the most popular names in state and year
 
 ## What is next?
-We are now finished with our second dataset practice with SQL. Now we can get a better overview of what we could do better on this dataset we worked with.
 
-- I could have still improved more on the datastory telling by removing some of the clutter and not that relevant information on my documentation. Basically just add all important notes, keywords, visuals and keypointers for our target audience.
-- I could have still improved in my data visualization even if using a different platform for it, in our practice we used Tableau Public. A good practice to always keep in mind is to make your visual very easy to understand that the target audience can understand it within 5 seconds.
+I would like to become better with SQL. I will try to work with Microsoft SQl.
 
-Always take note of this specific considerations to help you identify potential distractions, this applies to me and also to you starting in data analytics. 
-- **Not all data are equally important**. Use your space and audience’s attention wisely by getting rid of noncritical data or components.
-- **When detail isn’t needed, summarize**. You should be familiar with the detail, but that doesn’t mean your audience needs to be. Consider whether summarizing is appropriate.
-- **Ask yourself: would eliminating this change anything?** No? Take it out! Resist the temptation to keep things because they are cute or because you worked hard to create them; if they don’t support the message, they don’t serve the purpose of communication.
-- **Push necessary, but non‐message‐impacting items to the background**. Use your knowledge of pre attentive attributes to de‐emphasize. Light grey works well for this.
-
-- I could also have improved my data documenation and visuals by not over complicating it, sometimes 2 variables in a data visualization can be the most powerful thing in the world.
-
-On the next project we will still work with SQL but let us improve more on our datastory telling and tableau visuals this time. See you on our next project!
+See you in the next project!
