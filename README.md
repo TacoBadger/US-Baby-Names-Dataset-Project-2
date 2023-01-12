@@ -164,48 +164,6 @@ SELECT Gender, sum(Count) FROM state_names_baby group by Gender
 | M                         	| 155113251                |
 
 
-## Let's do some basic analytics
-
-Here we are starting to look at the data at more aggregated level. Instead of looking on the raw data we will start to grouping it to different levels we want to examine. In this example, we will base it by State, Names and Gender and we are using state_names_baby dataset.
-
-Here we will sort and filter the cleaned data to find out the answers to our questions. We will still use the same functions as earlier like SELECT, COUNT, LIMIT and ORDER BY/GROUP BY.
-- A SELECT statement retrieves zero or more rows from one or more database tables or database views.
-- The COUNT() function returns the number of rows that matches a specified criterion.
-- The ORDER BY keyword is used to sort the result-set in ascending or descending order.
-- The LIMIT command also limits the return of data in the DB Browser.
-
-We will be also using CREATE TEMPORARY TABLE to save csv files to create for visualizations.
-- TEMP TABLES are used to store data temporarily and they can perform CRUD (Create, Read, Update, and Delete), join, and some other operations like the persistent database tables. So you can just make a temp table and export it as a CSV file.
-
-## The Use of all SQL Queries and Functions
-
-Let's start with: What are the most popular names overall and which year? From here I wanted to create a temporary table for my visualizations too. So first we need to filter out the data that we need before making the temporary table.
-
-```bash
-#filter it first
-SELECT State, Name, Year, sum(Count) as Total
-FROM state_names_baby
-GROUP BY State, Name
-```
-
-This is the filtered and sorted data we need to answer our first question, we need to filter it more to find the top names for each states and which year. We will create a temporary table because we will use this for more filtering and sorting.
-
-```bash
-CREATE TEMPORARY TABLE all_years as
-SELECT State, Name, Year, sum(Count) as Total
-FROM state_names_baby
-GROUP BY State, Name
-```
-You can view the data on the tab called Browse Data and a drop down column choose the temp.all_years.
-
-![](https://user-images.githubusercontent.com/11693256/172169884-82c12bef-938d-4f1f-a38a-6f85fddbf2b2.png)
-
-We have a new table for filtering and sorting. This is where we used a new function ROWNUM() and partition and you will also noticed that the command has 2 selects. This is called a sub query.
-
-A **subqery** is a query that is nested inside a larger query just like in RStudio where it is also called nested.
-
-Which is a great example of sub queries and inside it are different kind of functions.
-
 ## Key Findings
 
 
