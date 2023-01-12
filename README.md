@@ -22,7 +22,7 @@ We will also be practicing our [Tableau](https://public.tableau.com/en-us/s/) sk
 
 ## Methods
 - [Motivation](#motivation)
-- [Questions](#questions-i-want-to-answer)
+- [Questions](#questions)
 - [Important Definitions](#important-definitions)
 - [Importing the dataset from Kaggle to see what tables we have in the dataset](#importing-the-dataset-from-kaggle-to-see-what-tables-we-have-in-the-dataset)
 - [Cleaning the dataset and sorting it accordingly](#cleaning-the-dataset-and-sorting-it-accordingly)
