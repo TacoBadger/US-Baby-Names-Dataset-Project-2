@@ -164,10 +164,10 @@ SELECT Gender, sum(Count) FROM state_names_baby group by Gender
 
 ## Key Findings
 
-I used the case study to learn some of the most basic sql queries such as SELECT, LIMIT, COUNT. I learned what the most popular girls names are as well, but I lacked to figure out the most popular names in state and year
+I used the case study to learn some of the most basic sql queries such as SELECT, LIMIT, COUNT. My questions was only half answeredI learned what the most popular girls names are as well, but I lacked to figure out the most popular names in state and year.
 
 ## What is next?
 
-I would like to become better with SQL. I will try to work with Microsoft SQl.
+I would like to become better with SQL. I will try to work with Microsoft SQl. I also want to become better with visualizations.
 
 See you in the next project!
