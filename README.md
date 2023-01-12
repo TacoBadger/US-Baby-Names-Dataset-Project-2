@@ -9,10 +9,6 @@ In this project, I will work with the most popular baby names in the US. The dat
 In this project, I will start playing around with SQL to get access to data, clean the data and analyze the data. The logic behind SQL is very similar to any other tools used for data analysis. I will use [DB Browser for SQLite](https://sqlitebrowser.org/). This is a visual, open source technology used to create, design, and edit database files compatible with SQLite. This platform allows users and developers to create databases, search, and edit data via a spreadsheet-like interface.
 
 
-In the end I will also generate a few visualization in Tableau, so it is easier to show the results. See here to learn more about [Tableau](https://public.tableau.com/en-us/s/).
-
-
-
 ## Author
 - [@TacoBadger](https://github.com/TacoBadger)
 
@@ -22,13 +18,7 @@ In the end I will also generate a few visualization in Tableau, so it is easier 
 - [Import the dataset](#import-the-dataset)
 - [Show the dataset](#show-the-dataset)
 - [Counting](#counting)
-- [The Use of all SQL Queries and Functions](#the-use-of-all-sql-queries-and-functions)
-- [Let's do some basic analytics](#lets-do-some-basic-analytics)
-- [Query Run Order](#query-run-order)
-- [Sub Queries and Functions](#sub-queries-and-functions)
 - [Key Findings](#key-findings)
-- [Explore our Tableau Public](#explore-our-tableau-public)
-- [Explore our Notebook](#explore-our-notebook)
 - [What is Next?](#what-is-next)
 
 ## Questions
@@ -214,170 +204,6 @@ We have a new table for filtering and sorting. This is where we used a new funct
 
 A **subqery** is a query that is nested inside a larger query just like in RStudio where it is also called nested.
 
-IMPORTANT NOTES ABOUT SUBQUERY:
-- Subqueries are usually nested in the SELECT, FROM, and/or WHERE clauses. Subqueries can’t be nested in SET queries.
-- Comparison operators such as >, <, or = help you compare data in subqueries. You can also use multiple row operators including IN, ANY, or ALL.
-- The statement containing a subquery is an outer query or outer select. Subqueries are nested within these statements, called inner queries or inner select.
-- The innermost query executes first. Its parent query executes last so it can use the results returned by inner queries.
-- Parentheses are used to mark the beginning and end of a subquery.
-- For a subquery to compare multiple columns, those columns must be selected in the main query.
-- A SET command can’t have a nested subquery because it is used with UPDATE to adjust specific columns and values in a table.
-- Subqueries that return more than one row rely on multiple value operators such as the IN command.
-
-What does the rownumber and partition by do?
-- The ROW_NUMBER() is a window function that assigns a sequential integer to each row of a query's result set. Rows are ordered starting from one based on the order specified by the ORDER BY clause in the window definition.
-- Partition By, this divides the rows or query result set into small partitions.
-
-```bash
-SELECT State, Name, Total, Year
-FROM (
-SELECT State, Name, Year, Total, row_number()
-over (partition by State
-order by Total desc ) AS rownum
-FROM all_years
-) where rownum < 4
-```
-This shows what we need and answered our question. Let's make another temporary table for exporting so we can make a visual for it.
-```bash
-CREATE TEMPORARY TABLE all_years_names as
-SELECT State, Name, Total, Year
-FROM (
-SELECT State, Name, Year, Total, row_number()
-over (partition by State
-order by Total desc ) AS rownum
-FROM all_years
-) where rownum < 4
-```
-
-What are the top 10 names for males and females? I will also create a temporary table for visualizations. We will do the same methods from all_years_names.
-
-```bash
-#filter the data based on the data that we need
-SELECT Name, sum(Count) as total
-FROM state_names_baby
-WHERE Gender = "F"
-GROUP  BY Name
-ORDER BY total desc
-LIMIT 10
-
-SELECT Name, sum(Count) as total
-FROM state_names_baby
-WHERE Gender = "M"
-GROUP  BY Name
-ORDER BY total desc
-LIMIT 10
-```
-
-Since this is the data we need to answer our question, we will create another temporary table for visualizations.
-
-```bash
-CREATE TEMPORARY TABLE popular_names_females as
-SELECT Name, sum(Count) as total
-FROM state_names_baby
-WHERE Gender = "F"
-GROUP BY Name
-ORDER BY total desc
-LIMIT 10
-
-CREATE TEMPORARY TABLE popular_names_males as
-SELECT Name, sum(Count) as total
-FROM state_names_baby
-WHERE Gender = "M"
-GROUP  BY Name
-ORDER BY total desc
-LIMIT 10
-```
-
-And lastly I want to know the top names per state (including the gender and year in the new table and visualization) in the last 3 years because adding the present might be culturally different. So we will create a new temporary table to sort and filter and also for visualizations.
-
-Please take note that the data is updated until 2014 so I decided to choose 3 years before which is 2013, 2012 and 2011 because the names might be more modern. I hope that is clear.
-
-```bash
-SELECT State, Name, Gender, Year, sum(Count) as Total
-FROM state_names_baby
-WHERE Year > 2011
-GROUP BY State, Name, Gender, Year
-```
-
-It has the right data that we need and now time to create a table to filter and sort it more. You can view it the browse data tab to make sure it is the same data you filtered earlier.
-
-```bash
-CREATE TEMPORARY TABLE three_years as
-SELECT State, Name, Gender, Year, sum(Count) as Total
-FROM state_names_baby
-WHERE Year > 2011
-GROUP BY State, Name, Gender, Year
-```
-
-We need to filter it more to get the right data to answer our question "What is the top three names per state in the last 3 years?"
-
-```bash
-SELECT State, Name, Total, Gender, Year
-FROM (
-SELECT State, Name, Year, Gender, Total, row_number()
-over (partition by State
-order by Total desc ) AS rownum
-FROM three_years
-) where rownum < 4
-```
-
-This has the right data for the popular names (including the gender and year in the new table and visualization) Time to create a table for this visualization.
-
-```bash
-CREATE TEMPORARY TABLE three_years_names as
-SELECT State, Name, Total, Gender, Year
-FROM (
-SELECT State, Name, Year, Gender, Total, row_number()
-over (partition by State
-order by Total desc ) AS rownum
-FROM three_years
-) where rownum < 4
-```
-
-## Query Run Order
-Now that we are familiar with most of the functionalities being used in a query, it is very important to understand the order that code runs.
-- SELECT
-- FROM
-- WHERE
-- GROUP BY
-- ROWNUM
-- ORDER BY
-- LIMIT
-- CREATE TEMP TABLE
-
-- Define which tables to use (FROM)
-- Keep only the rows that apply to the conditions (WHERE)
-- Group the data by the required level (if need) (GROUP BY)
-- Order the output of the new table (ORDER BY)
-- Returns a specific number of rows (ROWNUM)
-- Limit to number of rows - would cut it according the soring and the having filtering (LIMIT)
-- Creates a temp table for you to use (CREATE TEMP TABLE)
-
-## Sub Queries and Functions
-
-A Subquery or Inner query or a Nested query is a query within another SQL query and embedded within the WHERE clause. A subquery is used to return data that will be used in the main query as a condition to further restrict the data to be retrieved.  It is also a query that is nested inside a SELECT , INSERT , UPDATE , or DELETE statement, or inside another subquery.
-
-In our example  we used the codes:
-
-```bash
-SELECT State, Name, Total, Gender, Year
-    FROM (
-        SELECT State, Name, Year, Gender, Total, row_number()
-          over (partition by State
-                order by Total desc ) AS rownum
-        FROM three_years
-        ) where rownum < 4
-        
-CREATE TEMPORARY TABLE three_years_names as
-SELECT State, Name, Total, Gender, Year
-    FROM (
-        SELECT State, Name, Year, Gender, Total, row_number()
-          over (partition by State
-                order by Total desc ) AS rownum
-        FROM three_years
-        ) where rownum < 4
-```
-
 Which is a great example of sub queries and inside it are different kind of functions.
 
 ## Key Findings
@@ -399,15 +225,6 @@ Tableau Visualizations are used to summarize the key findings, we aim for you to
 
 ![](https://github.com/TacoBadger/US-Baby-Names-Dataset/blob/main/Assets/Top%20Names%20per%20State%20in%20the%20last%203%20Years.png?raw=true)
 
-## Explore our Tableau Public
-
-You can explore our tableau public to access the interactive data visualization.
-- [@TacoBadger](https://public.tableau.com/app/profile/taco.badger)
-
-## Explore our Notebook
-
-You can explore our notebook, copy and edit it based on your own analysis.
-- [Notebook](https://www.kaggle.com/code/cryptocosy/us-baby-names-analysis)
 
 ## What is next?
 We are now finished with our second dataset practice with SQL. Now we can get a better overview of what we could do better on this dataset we worked with.
